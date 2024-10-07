@@ -1,26 +1,17 @@
+"use strict";
 // Exercise 8: Optional Chaining
 // Create an interface for a "House" object with a nested "address" object that includes an optional "city" (string).
 // Use optional chaining to safely access the "city" and log it to the console.
-
-interface Address {
-  city?: string;
-}
-
-interface House {
-  address: Address;
-}
-
-const myHouse: House = {
-  address: {
-    city: "New York",
-  },
+var _a;
+const myHouse = {
+    address: {
+        city: "New York",
+    },
 };
-
 console.log(myHouse.address.city);
 // Expected Output: "New York"
-
-const noCityHouse: House = {
-  address: {},
+const noCityHouse = {
+    address: {},
 };
-console.log(noCityHouse.address.city ?? "City not available");
+console.log((_a = noCityHouse.address.city) !== null && _a !== void 0 ? _a : "City not available");
 // Expected Output: "City not available"
